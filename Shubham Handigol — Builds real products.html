@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shubham Handigol — Builds real products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffdf7; --surface:#ffffff; --ink:#2b2416; --muted:#6b6250; --line:#e8dfc8;
+  --accent:#d4a72c; --accent-ink:#2b2416; --gold-text:#8a6500; --mark:#c3e0a5; --pista-soft:#eef6e2;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1810; --surface:#262015; --ink:#f6efdc; --muted:#bdb393; --line:#3b3322;
+    --accent:#e0b84a; --accent-ink:#1c1810; --gold-text:#e0b84a; --mark:#9bc47a; --pista-soft:#2a3320; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1c1810; --surface:#262015; --ink:#f6efdc; --muted:#bdb393; --line:#3b3322;
+  --accent:#e0b84a; --accent-ink:#1c1810; --gold-text:#e0b84a; --mark:#9bc47a; --pista-soft:#2a3320; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-text);outline-offset:3px;border-radius:4px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+/* hero */
+.hero{padding:clamp(3.5rem,10vw,7rem) 0 clamp(2.5rem,6vw,4rem)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,13vw,8.5rem);line-height:.92;letter-spacing:-.035em;margin:0}
+.hero h1 span{display:block}
+.hero h1 .last{background:linear-gradient(transparent 62%,var(--mark) 62%,var(--mark) 92%,transparent 92%);display:inline;padding-right:.1em}
+.lede{font-size:clamp(1.15rem,2.6vw,1.5rem);max-width:34rem;margin:1.75rem 0 0;color:var(--muted)}
+.lede strong{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.25rem;border-radius:.6rem;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.hero h1{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1{animation:none}}
+
+/* sections */
+section{padding:clamp(2.5rem,6vw,4rem) 0;border-top:2px solid var(--ink)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 2rem}
+
+/* projects */
+.proj{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem 2.5rem;padding:2rem 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:.95rem}
+.when b{display:block;color:var(--ink);font-weight:600}
+.proj h3{font-family:var(--display);font-size:1.6rem;margin:0 0 .15rem;letter-spacing:-.01em}
+.role{color:var(--gold-text);font-weight:600;margin:0 0 1rem}
+.proj ul{margin:0;padding-left:1.15rem}
+.proj li{margin:.5rem 0;max-width:40rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem;padding:0;list-style:none}
+.tags li{margin:0;padding:.2rem .65rem;background:var(--pista-soft);border:1.5px solid var(--ink);border-radius:2rem;font-size:.9rem;font-weight:500}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.skill{background:var(--surface);border:1.5px solid var(--line);border-radius:.9rem;padding:1.25rem 1.4rem}
+.skill h3{font-family:var(--display);font-size:1.1rem;margin:0 0 .5rem}
+.skill p{margin:0;color:var(--muted)}
+.skill .now{display:inline-block;margin-top:.6rem;font-size:.9rem;font-weight:600;background:var(--mark);color:#2b2416;padding:.1rem .55rem;border-radius:.3rem}
+
+/* education + contact */
+.edu h3{font-family:var(--display);font-size:1.35rem;margin:0}
+.edu p{margin:.35rem 0 0;color:var(--muted);max-width:40rem}
+.contact{padding-bottom:4rem}
+.contact .big{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,5vw,3rem);letter-spacing:-.02em;word-break:break-word;text-decoration:underline;text-decoration-thickness:.12em;text-underline-offset:.15em;text-decoration-color:var(--accent)}
+.links{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+footer{padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+
+@media (max-width:42rem){
+  .proj{grid-template-columns:1fr;gap:.75rem}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1><span>Shubham</span><span><span class="last">Handigol</span></span></h1>
+    <p class="lede">CS student in Hubli who builds <strong>real products for real users</strong>. Co-founder of Dockly, founder of Bdigital.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn" href="mailto:shubham.s.handigol@gmail.com">Email me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="work">
+  <div class="wrap">
+    <h2>What I’m building</h2>
+
+    <article class="proj">
+      <div class="when"><b>May 2026 – now</b>Co-founder</div>
+      <div>
+        <h3>Dockly</h3>
+        <p class="role">Client portal for freelancers</p>
+        <ul>
+          <li>A client management portal that handles authentication and data flows for real users.</li>
+          <li>Set up Firebase Authentication with email/password, Google sign-in and phone OTP, with Firestore as the data layer.</li>
+          <li>Covers the whole stack as co-founder: architecture decisions, debugging and feature scoping.</li>
+        </ul>
+        <ul class="tags"><li>Firebase Auth</li><li>Firestore</li><li>Google OAuth</li><li>Phone OTP</li></ul>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="when"><b>July 2026 – now</b>Founder</div>
+      <div>
+        <h3>Bdigital</h3>
+        <p class="role">Web design studio for local businesses in Mangaluru</p>
+        <ul>
+          <li>Designs and delivers websites for small businesses. Signed 2 paying customers.</li>
+          <li>Built a lead-generation pipeline that scrapes Google Maps business data with Apify and feeds a WhatsApp-first outreach system.</li>
+          <li>Deployed a portfolio site and client demo sites on Vercel, including live redesign demos used to win restaurant clients.</li>
+          <li>Runs the full client lifecycle: outreach, pitching, pricing and delivery.</li>
+        </ul>
+        <ul class="tags"><li>Apify</li><li>Vercel</li><li>HTML / CSS / JS</li><li>WhatsApp outreach</li></ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><p>C (DSA-focused), C++, JavaScript, HTML, CSS</p></div>
+      <div class="skill"><h3>Frontend</h3><p>HTML/CSS fundamentals, JavaScript</p><span class="now">React: learning now</span></div>
+      <div class="skill"><h3>Backend and tools</h3><p>Firebase (Auth, Firestore), Vercel, Apify, Git and GitHub</p></div>
+      <div class="skill"><h3>CS fundamentals</h3><p>Arrays, linked lists, stacks, queues and sorting in C. Computer Organization, Digital Electronics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="edu">
+  <div class="wrap">
+    <h2>Education</h2>
+    <h3>KLE Technological University, BVB</h3>
+    <p>B.E. in Computer Science and Engineering, Hubli. Expected 2029.</p>
+    <p>Coursework: Data Structures &amp; Algorithms, Computer Organization, Digital Electronics, Probability &amp; Statistics.</p>
+    <p>Outside class I follow my own roadmap: HTML/CSS, JavaScript, React, then Node.js, alongside DSA.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let’s talk</h2>
+    <a class="big" href="mailto:shubham.s.handigol@gmail.com">shubham.s.handigol@gmail.com</a>
+    <div class="links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Shubham Handigol</div></footer>
+</body>
+</html>
